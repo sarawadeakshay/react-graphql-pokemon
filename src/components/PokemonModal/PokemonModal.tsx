@@ -75,9 +75,9 @@ export const Modal = () => {
                 <span className={classes['label-str']}>Classification: </span>
                 {pokemon.classification}
               </div>
-              <div className={classes['poke-types']}>
-                <span className={classes.label}>Weaknesses: </span>
-                {pokemon.weaknesses.map((weakness) => <div key={`${pokemon.id}-${weakness}`} className={classes['poke-types-span']}>{weakness}</div>)}
+              <div key={`${pokemon.id}-${pokemon.fleeRate}`}>
+                <span className={classes['label-str']}>Flee Rate: </span>
+                {pokemon.fleeRate}
               </div>
               <div className={classes['poke-types']}>
                 <span className={classes.label}>Types: </span>
@@ -88,7 +88,7 @@ export const Modal = () => {
                 {pokemon.resistant.map((res) => <div key={`${pokemon.id}-${res}`} className={classes['poke-types-span']}>{res}</div>)}
               </div>
               <div className={classes['poke-types']}>
-                <span className={classes.label}>Weakness: </span>
+                <span className={classes.label}>Weaknesses: </span>
                 {pokemon.weaknesses.map((weakness) => <div key={`${pokemon.id}-${weakness}`} className={classes['poke-types-span']}>{weakness}</div>)}
               </div>
             </div>
@@ -126,7 +126,7 @@ const useStyles = createUseStyles(
     },
     'label-str': {
       fontWeight: 'bold',
-      paddingBottom: '5px',
+      paddingBottom: '10px',
       width: '110px',
       display: 'inline-block',
     },
